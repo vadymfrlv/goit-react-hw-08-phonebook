@@ -14,16 +14,16 @@ const filter = createReducer('', {
 
 const loading = createReducer(false, {
   [getExistContacts.pending]: () => true,
-  [getExistContacts.fulfilled]: () => false,
   [getExistContacts.rejected]: () => false,
+  [getExistContacts.fulfilled]: () => false,
 
   [addContact.pending]: () => true,
-  [addContact.fulfilled]: () => false,
   [addContact.rejected]: () => false,
+  [addContact.fulfilled]: () => false,
 
   [deleteContact.pending]: () => true,
-  [deleteContact.fulfilled]: () => false,
   [deleteContact.rejected]: () => false,
+  [deleteContact.fulfilled]: () => false,
 });
 
 const setError = (_, { playload }) => playload;
