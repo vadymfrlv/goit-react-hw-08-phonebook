@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import { userSignUpThunk, userLoginThunk } from 'redux/authorization/authorization-operations';
-import { getStateError } from 'redux/user/userSelector';
 import styles from './Authorization.module.css';
 
 const AuthorizationForm = () => {

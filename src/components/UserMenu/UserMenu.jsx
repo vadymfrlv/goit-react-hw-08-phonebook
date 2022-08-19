@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogoutThunk } from 'redux/authorization/authorization-operations';
-import { getUserEmail } from 'redux/auth/authSelectors';
-import avatar from '/images/avatar.png';
+import { getUserEmail } from 'redux/authorization/authorization-selectors';
+import avatar from '../../images/avatar.png';
 import styles from './UserMenu.module.css';
 
 const UserMenu = () => {
