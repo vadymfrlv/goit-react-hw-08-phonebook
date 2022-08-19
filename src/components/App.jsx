@@ -1,40 +1,41 @@
 import { useEffect, lazy } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
-import { getContacts } from 'redux/contacts/contacts-selectors';
-import { getExistContacts } from 'redux/contacts/contacts-operations';
-import Section from './Section';
-import ContactForm from './ContactForm';
-import ContactList from './ContactList';
-import Filter from './Filter';
-import Notification from './Notification';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import PublicRoute from './Routes/PublicRoute';
+import PrivateRoute from './Routes/PrivateRoute';
+import UserMenu from './UserMenu';
+import { getCurrentUserThunk } from 'redux/authorization/authorization-operations';
+import { getLoggedIn } from 'redux/authorization/authorization-selectors';
 import styles from './App.module.css';
 
+const HomePage = lazy(() =>
+  import('../pages/HomePage' /* webpackChunkName: 'ContaHomePagectsPage' */)
+);
+const SignUpPage = lazy(() => import('../pages/SignUpPage' /* webpackChunkName: 'SignUpPage' */));
+const LoginPage = lazy(() => import('../pages/LoginPage' /* webpackChunkName: 'LoginPage' */));
+const ContactsPage = lazy(() =>
+  import('../pages/ContactsPage' /* webpackChunkName: 'ContactsPage' */)
+);
+
 export default function App() {
-  const contacts = useSelector(getContacts);
+  const isLoggedIn = useSelector(getLoggedIn);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getExistContacts());
+    dispatch(getCurrentUserThunk());
   }, [dispatch]);
 
   return (
-    <div>
-      <Section title="Phonebook">
-        <ContactForm />
-      </Section>
-
-      <Section title="Contacts">
-        {contacts.length > 0 ? (
-          <>
-            <div className={styles.description}>All contacts: {contacts.length}</div>
-            <Filter />
-            <ContactList />
-          </>
-        ) : (
-          <Notification message="There are no contacts yet. Let's create a new one!" />
-        )}
-      </Section>
-    </div>
+    <>
+      {isLoggedIn && <UserMenu />}
+      <h1 className={styles.title}>Phonebook</h1>
+      <Routes>
+        <Route path="/" element={<PublicRoute component={HomePage} restricted />} />
+        <Route path="/signup" element={<PublicRoute component={SignUpPage} restricted />} />
+        <Route path="/login" element={<PublicRoute component={LoginPage} restricted />} />
+        <Route path="/contacts" element={<PrivateRoute component={ContactsPage} />} />
+        <Route path="*" element={<Navigate to="/login" />} />
+      </Routes>
+    </>
   );
 }
