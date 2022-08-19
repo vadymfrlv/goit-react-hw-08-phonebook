@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.64b772ab.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.1b1118ff.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.9f7d8dff.js",
     "ContaHomePagectsPage.js": "/goit-react-hw-08-phonebook/static/js/ContaHomePagectsPage.289f0e47.chunk.js",
     "SignUpPage.js": "/goit-react-hw-08-phonebook/static/js/SignUpPage.7306b573.chunk.js",
     "LoginPage.js": "/goit-react-hw-08-phonebook/static/js/LoginPage.da55e2e0.chunk.js",
@@ -11,7 +11,7 @@
     "static/media/avatar.png": "/goit-react-hw-08-phonebook/static/media/avatar.2e68a90f707b28e0f678.png",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.64b772ab.css.map": "/goit-react-hw-08-phonebook/static/css/main.64b772ab.css.map",
-    "main.1b1118ff.js.map": "/goit-react-hw-08-phonebook/static/js/main.1b1118ff.js.map",
+    "main.9f7d8dff.js.map": "/goit-react-hw-08-phonebook/static/js/main.9f7d8dff.js.map",
     "ContaHomePagectsPage.289f0e47.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/ContaHomePagectsPage.289f0e47.chunk.js.map",
     "SignUpPage.7306b573.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/SignUpPage.7306b573.chunk.js.map",
     "LoginPage.da55e2e0.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/LoginPage.da55e2e0.chunk.js.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.64b772ab.css",
-    "static/js/main.1b1118ff.js"
+    "static/js/main.9f7d8dff.js"
   ]
 }
