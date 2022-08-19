@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/contacts-operations';
-import { getContacts } from 'redux/contacts/contacts-selectors';
+import { getContacts, getLoading } from 'redux/contacts/contacts-selectors';
 import styles from './ContactForm.module.css';
 
 function ContactForm() {
@@ -10,6 +10,7 @@ function ContactForm() {
 
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
+  const isLoading = useSelector(getLoading);
 
   const handleChange = evt => {
     const { name, value } = evt.target;
@@ -73,8 +74,8 @@ function ContactForm() {
         />
       </label>
 
-      <button type="submit" className={styles.btnAddContact}>
-        Add contact
+      <button className={styles.btnAddContact} type="submit" disabled={isLoading}>
+        {!isLoading ? 'Add contact' : 'Adding...'}
       </button>
     </form>
   );
