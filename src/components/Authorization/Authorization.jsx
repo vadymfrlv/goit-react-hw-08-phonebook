@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { userSignUpThunk, userLoginThunk } from 'redux/authorization/authorization-operations';
 import styles from './Authorization.module.css';
 
