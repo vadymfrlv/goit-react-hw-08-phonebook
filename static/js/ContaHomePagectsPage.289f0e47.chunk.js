@@ -1,0 +1,2 @@
+(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[828],{6324:function(){},3983:function(n,e,o){"use strict";o.r(e);var t=o(6324),u=o.n(t),c=o(3329);e.default=function(){return(0,c.jsx)(u(),{})}}}]);
+//# sourceMappingURL=ContaHomePagectsPage.289f0e47.chunk.js.map
