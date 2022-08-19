@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, lazy } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
 import { getContacts } from 'redux/contacts/contacts-selectors';
 import { getExistContacts } from 'redux/contacts/contacts-operations';
 import Section from './Section';
