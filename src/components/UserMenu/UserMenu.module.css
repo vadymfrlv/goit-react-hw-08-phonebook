@@ -1,0 +1,19 @@
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  margin-right: 10px;
+}
+
+.name {
+  margin-right: 10px;
+  font-weight: 800;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: #acfc00;
+}

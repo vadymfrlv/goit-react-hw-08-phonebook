@@ -1,0 +1,26 @@
+.link {
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: 700;
+  color: #000000;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.link:last-child {
+  margin-right: 0;
+}
+
+.activeLink {
+  display: inline-block;
+  text-decoration: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-weight: 700;
+  color: #acfc00;
+}
+
+.activeLink:last-child {
+  margin-right: 10px;
+}

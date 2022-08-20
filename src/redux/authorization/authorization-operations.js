@@ -36,7 +36,7 @@ export const getCurrentUserThunk = createAsyncThunk(
   'authorization/getCurrentUser',
   async (_, thunkApi) => {
     const state = thunkApi.getState();
-    const persistedToken = state.authorization.token;
+    const persistedToken = state.user.token;
 
     if (!persistedToken) {
       return thunkApi.rejectWithValue();

@@ -6,18 +6,18 @@
 
 // export default SignUpPage;
 
-import { TextField, Button } from '@mui/material';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { userSignUpThunk } from 'redux/authorization/authorization-operations';
-
+import { TextField, Button } from '@mui/material';
 import styles from './SignUpPage.module.css';
 
 export default function RegisterView() {
-  const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch();
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {

@@ -1,14 +1,13 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import PublicRoute from './Routes/PublicRoute';
-import PrivateRoute from './Routes/PrivateRoute';
+import { PublicRoute, PrivateRoute } from './Routes';
 // import UserMenu from './UserMenu';
 import { getCurrentUserThunk } from 'redux/authorization/authorization-operations';
 import { getIsFetchCurrentUser } from 'redux/authorization/authorization-selectors';
 // import styles from './App.module.css';
 
-import AppBar from './AppBar';
+import SharedLayout from './SharedLayout';
 import ContactsPage from '../pages/ContactsPage/ContactsPage';
 import HomePage from '../pages/HomePage/HomePage';
 import LoginPage from '../pages/LoginPage/LoginPage';
@@ -34,7 +33,7 @@ export default function App() {
   return (
     !isFetchCurrentUser && (
       <>
-        <AppBar />
+        <SharedLayout />
 
         {/* <h1 className={styles.title}>Phonebook</h1> */}
         <Routes>
