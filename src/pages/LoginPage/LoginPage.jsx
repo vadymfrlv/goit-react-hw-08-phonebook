@@ -77,6 +77,7 @@ export default function LoginView() {
           name="email"
           value={email}
           onChange={handleChange}
+          required
           sx={textFieldSX}
           inputProps={{
             style: {
@@ -99,6 +100,7 @@ export default function LoginView() {
           name="password"
           value={password}
           onChange={handleChange}
+          required
           sx={textFieldSX}
           inputProps={{
             style: { fontSize: 17, fontWeight: 700, color: 'rgba(255, 255, 255, 0.676)' },
