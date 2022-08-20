@@ -11,8 +11,8 @@ import { getIsFetchCurrentUser } from 'redux/authorization/authorization-selecto
 import AppBar from './AppBar';
 import ContactsPage from '../pages/ContactsPage/ContactsPage';
 import HomePage from '../pages/HomePage/HomePage';
-import LoginPage from '../pages/LoginPage';
-import SignUpPage from '../pages/SignUpPage';
+import LoginPage from '../pages/LoginPage/LoginPage';
+import SignUpPage from '../pages/SignUpPage/SignUpPage';
 
 // const HomePage = lazy(() =>
 //   import('../pages/HomePage' /* webpackChunkName: 'ContaHomePagectsPage' */)

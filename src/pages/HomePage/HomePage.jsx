@@ -1,13 +1,3 @@
-// import HomePageNav from 'components/HomePageNav';
-
-// const HomePage = () => {
-//   return <HomePageNav />;
-// };
-
-// export default HomePage;
-
-// import React from 'react';
-// import logo from '../images/contact-book.png';
 import styles from './HomePage.module.css';
 
 const HomeView = () => (

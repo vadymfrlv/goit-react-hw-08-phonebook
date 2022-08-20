@@ -19,11 +19,11 @@ const ContactsPage = () => {
 
   return (
     <div>
-      <Section title="Phonebook">
+      <Section title="Add contact">
         <ContactForm />
       </Section>
 
-      <Section title="Contacts">
+      <Section title="Contacts list">
         {contacts.length > 0 ? (
           <>
             <div className={styles.description}>All contacts: {contacts.length}</div>

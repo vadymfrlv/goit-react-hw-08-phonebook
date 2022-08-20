@@ -10,6 +10,7 @@
   font-weight: 900;
   font-size: 120px;
   text-align: center;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 
   color: #fff;
@@ -17,12 +18,14 @@
 }
 
 .subTitle {
-  font-size: 15px;
-  letter-spacing: 0.15em;
   margin-left: auto;
   margin-right: auto;
+
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.15em;
   text-align: center;
   text-transform: uppercase;
+
   color: rgba(255, 255, 255, 0.676);
-  font-weight: 700;
 }
