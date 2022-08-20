@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Navigation, AuthorizationNav } from '../Navigation';
-import UserMenu from '../UserMenu';
 import { getLoggedIn } from 'redux/authorization/authorization-selectors';
+import UserMenu from '../UserMenu';
 import styles from './SharedLayout.module.css';
 
 export default function AppBar() {

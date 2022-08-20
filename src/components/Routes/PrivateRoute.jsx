@@ -8,9 +8,7 @@ import Loader from '../Loader';
 const PrivateRoute = ({ children }) => {
   const isLoggedIn = useSelector(getLoggedIn);
 
-  return (
-    <Suspense fallback={<Loader />}>{isLoggedIn ? children : <Navigate to="/login" />}</Suspense>
-  );
+  return <Suspense fallback={<Loader />}>{isLoggedIn ? children : <Navigate to="/" />}</Suspense>;
 };
 
 // PrivateRoute.prototype = {

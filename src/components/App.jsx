@@ -1,25 +1,23 @@
-import { useEffect } from 'react';
+import { useEffect, lazy } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { PublicRoute, PrivateRoute } from './Routes';
-// import UserMenu from './UserMenu';
 import { getCurrentUserThunk } from 'redux/authorization/authorization-operations';
 import { getIsFetchCurrentUser } from 'redux/authorization/authorization-selectors';
-
 import SharedLayout from './SharedLayout';
-import ContactsPage from '../pages/ContactsPage/ContactsPage';
-import HomePage from '../pages/HomePage/HomePage';
-import LoginPage from '../pages/LoginPage/LoginPage';
-import SignUpPage from '../pages/SignUpPage/SignUpPage';
 
-// const HomePage = lazy(() =>
-//   import('../pages/HomePage' /* webpackChunkName: 'ContaHomePagectsPage' */)
-// );
-// const SignUpPage = lazy(() => import('../pages/SignUpPage' /* webpackChunkName: 'SignUpPage' */));
-// const LoginPage = lazy(() => import('../pages/LoginPage' /* webpackChunkName: 'LoginPage' */));
-// const ContactsPage = lazy(() =>
-//   import('../pages/ContactsPage' /* webpackChunkName: 'ContactsPage' */)
-// );
+const HomePage = lazy(() =>
+  import('../pages/HomePage/HomePage' /* webpackChunkName: 'ContaHomePagectsPage' */)
+);
+const SignUpPage = lazy(() =>
+  import('../pages/SignUpPage/SignUpPage' /* webpackChunkName: 'SignUpPage' */)
+);
+const LoginPage = lazy(() =>
+  import('../pages/LoginPage/LoginPage' /* webpackChunkName: 'LoginPage' */)
+);
+const ContactsPage = lazy(() =>
+  import('../pages/ContactsPage/ContactsPage' /* webpackChunkName: 'ContactsPage' */)
+);
 
 export default function App() {
   const isFetchCurrentUser = useSelector(getIsFetchCurrentUser);
@@ -72,17 +70,3 @@ export default function App() {
     )
   );
 }
-
-// return (
-//   <>
-//     {isLoggedIn && <AppBar />}
-//     <h1 className={styles.title}>Phonebook</h1>
-//     <Routes>
-//       <Route path="/" element={<PublicRoute component={HomePage} restricted />} />
-//       <Route path="/signup" element={<PublicRoute component={SignUpPage} restricted />} />
-//       <Route path="/login" element={<PublicRoute component={LoginPage} restricted />} />
-//       <Route path="/contacts" element={<PrivateRoute component={ContactsPage} />} />
-//       <Route path="*" element={<Navigate to="/login" />} />
-//     </Routes>
-//   </>
-// );

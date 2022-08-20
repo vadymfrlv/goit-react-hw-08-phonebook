@@ -1,10 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { Button } from '@mui/material';
 import { userLogoutThunk } from 'redux/authorization/authorization-operations';
 import { getUserName } from 'redux/authorization/authorization-selectors';
 import avatar from '../../images/avatar.png';
 import styles from './UserMenu.module.css';
-
-import { Button } from '@mui/material';
 
 const UserMenu = () => {
   const name = useSelector(getUserName);
@@ -28,7 +27,7 @@ const UserMenu = () => {
 
   return (
     <div className={styles.menu}>
-      <img className={styles.avatar} src={avatar} width="30" height="30" alt="default avatar" />
+      <img className={styles.avatar} src={avatar} width="30" height="30" alt="avatar icon" />
       <span className={styles.name}>Hi, {name}</span>
 
       <Button

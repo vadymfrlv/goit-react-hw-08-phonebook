@@ -16,7 +16,6 @@ const PublicRoute = ({ children, restricted = false }) => {
 };
 
 PublicRoute.propTypes = {
-  // component: PropTypes.object,
   restricted: PropTypes.bool,
 };
 
