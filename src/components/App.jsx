@@ -5,7 +5,6 @@ import { PublicRoute, PrivateRoute } from './Routes';
 // import UserMenu from './UserMenu';
 import { getCurrentUserThunk } from 'redux/authorization/authorization-operations';
 import { getIsFetchCurrentUser } from 'redux/authorization/authorization-selectors';
-// import styles from './App.module.css';
 
 import SharedLayout from './SharedLayout';
 import ContactsPage from '../pages/ContactsPage/ContactsPage';

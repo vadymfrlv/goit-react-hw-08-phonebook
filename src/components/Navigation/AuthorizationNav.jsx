@@ -7,13 +7,13 @@ export default function AuthNav() {
     <div>
       <NavLink
         to="/signup"
-        className={({ isActive }) => (isActive ? styles.activeLink : styles.link)}
+        className={({ isActive }) => (isActive ? styles.activeLink : styles.link && styles.signup)}
       >
         Sign Up
       </NavLink>
       <NavLink
         to="/login"
-        className={({ isActive }) => (isActive ? styles.activeLink : styles.link)}
+        className={({ isActive }) => (isActive ? styles.activeLink : styles.link && styles.login)}
       >
         Login
       </NavLink>
