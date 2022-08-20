@@ -34,7 +34,6 @@ export default function App() {
       <>
         <SharedLayout />
 
-        {/* <h1 className={styles.title}>Phonebook</h1> */}
         <Routes>
           <Route
             path="/"
