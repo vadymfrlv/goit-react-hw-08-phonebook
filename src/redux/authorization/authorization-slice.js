@@ -14,6 +14,7 @@ const userSlice = createSlice({
     isLoggedIn: false,
     loading: false,
     error: null,
+    isFetchCurrentUser: false,
   },
 
   extraReducers: {
@@ -60,20 +61,24 @@ const userSlice = createSlice({
       state.token = null;
       state.isLoggedIn = false;
       state.loading = false;
+      state.isFetchCurrentUser = false;
     },
 
     [getCurrentUserThunk.pending]: state => {
       state.loading = true;
       state.error = null;
+      state.isFetchCurrentUser = true;
     },
     [getCurrentUserThunk.rejected]: (state, { payload }) => {
       state.loading = false;
       state.error = payload;
+      state.isFetchCurrentUser = false;
     },
     [getCurrentUserThunk.fulfilled]: (state, { payload }) => {
       state.email = payload.email;
       state.isLoggedIn = true;
       state.loading = false;
+      state.isFetchCurrentUser = false;
     },
   },
 });

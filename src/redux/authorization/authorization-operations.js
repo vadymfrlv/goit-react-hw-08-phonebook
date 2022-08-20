@@ -14,8 +14,8 @@ export const userLoginThunk = createAsyncThunk(
   'authorization/userLogin',
   async (userData, thunkApi) => {
     try {
-      const user = await API.userLogin(userData);
-      return user;
+      const data = await API.userLogin(userData);
+      return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }
@@ -25,8 +25,8 @@ export const userLoginThunk = createAsyncThunk(
 export const userLogoutThunk = createAsyncThunk('authorization/userLogout', async (_, thunkApi) => {
   const { token } = thunkApi.getState().user;
   try {
-    const user = await API.userLogout(token);
-    return user;
+    const data = await API.userLogout(token);
+    return data;
   } catch (error) {
     return thunkApi.rejectWithValue(error.message);
   }
@@ -35,10 +35,16 @@ export const userLogoutThunk = createAsyncThunk('authorization/userLogout', asyn
 export const getCurrentUserThunk = createAsyncThunk(
   'authorization/getCurrentUser',
   async (_, thunkApi) => {
-    const { token } = thunkApi.getState().user;
+    const state = thunkApi.getState();
+    const persistedToken = state.authorization.token;
+
+    if (!persistedToken) {
+      return thunkApi.rejectWithValue();
+    }
+
     try {
-      const user = await API.getCurrentUser(token);
-      return user;
+      const data = await API.getCurrentUser(persistedToken);
+      return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }

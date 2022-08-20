@@ -29,8 +29,8 @@ const userLogout = async () => {
   return data;
 };
 
-const getCurrentUser = async userToken => {
-  token.set(userToken);
+const getCurrentUser = async persistedToken => {
+  token.set(persistedToken);
   const { data } = await axios.get('/users/current');
   return data;
 };

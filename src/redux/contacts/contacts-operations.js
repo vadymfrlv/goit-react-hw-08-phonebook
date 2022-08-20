@@ -4,8 +4,9 @@ import * as API from 'services/contactsAPI';
 export const getExistContacts = createAsyncThunk(
   'contacts/getExistContacts',
   async (_, thunkApi) => {
+    const { token } = thunkApi.getState().user;
     try {
-      const contacts = await API.getExistContacts();
+      const contacts = await API.getExistContacts(token);
       return contacts;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
@@ -15,9 +16,9 @@ export const getExistContacts = createAsyncThunk(
 
 export const addContact = createAsyncThunk(
   'contacts/addContact',
-  async ({ name, phone }, thunkApi) => {
+  async ({ name, number }, thunkApi) => {
     try {
-      const contact = await API.addContact({ name, phone });
+      const contact = await API.addContact({ name, number });
       return contact;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);

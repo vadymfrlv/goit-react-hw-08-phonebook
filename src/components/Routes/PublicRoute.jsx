@@ -5,18 +5,18 @@ import { Navigate } from 'react-router-dom';
 import { getLoggedIn } from 'redux/authorization/authorization-selectors';
 import Loader from '../Loader';
 
-const PublicRoute = ({ component: Component, restricted = false }) => {
+const PublicRoute = ({ children, restricted = false }) => {
   const isLoggedIn = useSelector(getLoggedIn);
 
   return (
     <Suspense fallback={<Loader />}>
-      {isLoggedIn && restricted ? <Navigate to="/contacts" /> : <Component />}
+      {isLoggedIn && restricted ? <Navigate to="/contacts" /> : children}
     </Suspense>
   );
 };
 
 PublicRoute.propTypes = {
-  component: PropTypes.object,
+  // component: PropTypes.object,
   restricted: PropTypes.bool,
 };
 

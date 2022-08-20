@@ -17,7 +17,7 @@ import contactsReducer from './contacts/contacts-slice';
 const userPersistConfig = {
   key: 'user',
   storage,
-  blacklist: ['token'],
+  whitelist: ['token'],
 };
 
 export const store = configureStore({

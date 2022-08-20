@@ -25,7 +25,7 @@ const AuthorizationForm = () => {
   const handleSubmit = evt => {
     evt.preventDefault();
 
-    if (location === '/signUp') {
+    if (location === '/signup') {
       if (name === '' || email === '' || password === '') return;
       dispatch(userSignUpThunk({ name, email, password }));
     }
@@ -40,7 +40,7 @@ const AuthorizationForm = () => {
     <div>
       <h2 className={styles.title}>{location === '/login' ? 'Login' : 'Sign Up'}</h2>
       <form className={styles.authForm} onSubmit={handleSubmit}>
-        {location === '/signUp' && (
+        {location === '/signup' && (
           <label className={styles.label}>
             Name
             <input
@@ -74,7 +74,7 @@ const AuthorizationForm = () => {
           />
         </label>
         <button className={styles.btn} type="submit">
-          {location !== '/signUp' ? 'Login' : 'Sign Up'}
+          {location !== '/signup' ? 'Login' : 'Sign Up'}
         </button>
       </form>
     </div>
