@@ -23,7 +23,8 @@ const userLogin = async userData => {
   return data;
 };
 
-const userLogout = async () => {
+const userLogout = async persistedToken => {
+  token.set(persistedToken);
   const data = await axios.post('/users/logout');
   token.unSet();
   return data;

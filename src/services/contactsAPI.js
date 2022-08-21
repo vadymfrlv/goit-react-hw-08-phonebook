@@ -11,8 +11,8 @@ const token = {
   },
 };
 
-const getExistContacts = async credentials => {
-  token.set(credentials);
+const getExistContacts = async persistedToken => {
+  token.set(persistedToken);
   const { data } = await axios.get('/contacts');
   return data;
 };
