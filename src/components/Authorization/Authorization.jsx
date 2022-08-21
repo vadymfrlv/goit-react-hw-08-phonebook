@@ -154,11 +154,10 @@ const AuthorizationForm = () => {
           {location === '/login' ? 'Login' : 'Sign Up'}
         </Button>
         <div className={styles.errorContainer}>
-          {error && location === '/login' && (
-            <p className={styles.error}>Incorrect email or password</p>
-          )}
-          {error && location === '/signup' && (
-            <p className={styles.error}>This email is alredy used</p>
+          {error && (
+            <p className={styles.error}>
+              {location === '/login' ? ' Incorrect email or password' : 'This email is alredy used'}
+            </p>
           )}
         </div>
       </form>
