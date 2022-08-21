@@ -147,7 +147,7 @@ const AuthorizationForm = () => {
           sx={textFieldSX}
           inputProps={{
             style: { fontSize: 17, fontWeight: 700, color: 'rgba(255, 255, 255, 0.676)' },
-            pattern: '(?=.*d)(?=.*[a-z])(?=.*[A-Z]){8,}',
+            pattern: '(?=.*[0-9])(?=.*[a-zA-Z]).{8,}',
           }}
           InputLabelProps={{
             style: { fontSize: 15, fontWeight: 700, color: 'rgba(255, 255, 255, 0.676)' },
