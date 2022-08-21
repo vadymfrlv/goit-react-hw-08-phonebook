@@ -93,6 +93,7 @@ const AuthorizationForm = () => {
             name="name"
             value={name}
             onChange={handleChangeInput}
+            placeholder="Name Surname"
             required
             sx={textFieldSX}
             inputProps={{
@@ -116,8 +117,8 @@ const AuthorizationForm = () => {
           type="email"
           name="email"
           value={email}
-          placeholder="example@mail.com"
           onChange={handleChangeInput}
+          placeholder="example@mail.com"
           required
           sx={textFieldSX}
           inputProps={{
@@ -141,10 +142,12 @@ const AuthorizationForm = () => {
           name="password"
           value={password}
           onChange={handleChangeInput}
+          placeholder="at least 8 chars, numbers and letters"
           required
           sx={textFieldSX}
           inputProps={{
             style: { fontSize: 17, fontWeight: 700, color: 'rgba(255, 255, 255, 0.676)' },
+            pattern: '/^(?=.*d)(?=.*[a-z])(?=.*[A-Z]){8,}$/',
           }}
           InputLabelProps={{
             style: { fontSize: 15, fontWeight: 700, color: 'rgba(255, 255, 255, 0.676)' },
