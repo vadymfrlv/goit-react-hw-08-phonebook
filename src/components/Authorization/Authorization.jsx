@@ -147,7 +147,7 @@ const AuthorizationForm = () => {
           sx={textFieldSX}
           inputProps={{
             style: { fontSize: 17, fontWeight: 700, color: 'rgba(255, 255, 255, 0.676)' },
-            pattern: '/^(?=.*d)(?=.*[a-z])(?=.*[A-Z]){8,}$/',
+            pattern: '(?=.*d)(?=.*[a-z])(?=.*[A-Z]){8,}',
           }}
           InputLabelProps={{
             style: { fontSize: 15, fontWeight: 700, color: 'rgba(255, 255, 255, 0.676)' },
@@ -159,7 +159,7 @@ const AuthorizationForm = () => {
         <div className={styles.errorContainer}>
           {error && (
             <p className={styles.error}>
-              {location === '/login' ? ' Incorrect email or password' : 'This email is alredy used'}
+              {location !== '/login' ? ' Incorrect email or password' : 'This email is alredy used'}
             </p>
           )}
         </div>
