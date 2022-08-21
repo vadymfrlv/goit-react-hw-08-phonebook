@@ -159,7 +159,7 @@ const AuthorizationForm = () => {
         <div className={styles.errorContainer}>
           {error && (
             <p className={styles.error}>
-              {location !== '/login' ? ' Incorrect email or password' : 'This email is alredy used'}
+              {location === '/login' ? ' Incorrect email or password' : 'This email is alredy used'}
             </p>
           )}
         </div>
