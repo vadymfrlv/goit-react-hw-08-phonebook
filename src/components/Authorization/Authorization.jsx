@@ -34,11 +34,16 @@ const AuthorizationForm = () => {
     if (location === '/signup') {
       if (name === '' || email === '' || password === '') return;
       dispatch(userSignUpThunk({ name, email, password }));
+      setName('');
+      setEmail('');
+      setPassword('');
     }
 
     if (location === '/login') {
       if (email === '' || password === '') return;
       dispatch(userLoginThunk({ email, password }));
+      setEmail('');
+      setPassword('');
     }
   };
 
@@ -152,7 +157,9 @@ const AuthorizationForm = () => {
           {error && location === '/login' && (
             <p className={styles.error}>Incorrect email or password</p>
           )}
-          {error && location !== '/login' && <p className={styles.error}>This email is alredy</p>}
+          {error && location === '/signup' && (
+            <p className={styles.error}>This email is alredy used</p>
+          )}
         </div>
       </form>
     </div>
